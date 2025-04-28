@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      div {
+        width: 400px;
+        height: 250px;
+        border: 20px solid rgba(200, 200, 0, 0.5);
+        padding: 20px;
+        margin-bottom: 20px;
+        background: url(https://cdn.seoulwire.com/news/photo/201804/13018_9060_4527.jpg)
+        no-repeat top right / 30%
+      }
+      #bg1 {
+        background-origin: padding-box;
+      }
+      #bg2 {
+        background-origin: border-box;
+      }
+      #bg3 {
+        background-origin: content-box;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="index.html">홈으로</a><br />
+    <!-- (div#bg$>h2{행복을 위해서라면}+h3{시간을 벌자, 돈도 벌고}+p{lorem25})*3 -->
+    <div id="bg1">
+      <h2>행복을 위해서라면</h2>
+      <h3>시간을 벌자, 돈도 벌고</h3>
+      <p>
+        That which we persist in doing becomes easier for us to do; 
+        not that the nature of the thing itself is changed, but that 
+        our power to do is increased.
+      </p>
+    </div>
+    <div id="bg2">
+      <h2>행복을 위해서라면</h2>
+      <h3>시간을 벌자, 돈도 벌고</h3>
+      <p>
+        Anyone who stops learning is old, whether at twenty or eighty. 
+        Anyone who keeps learning stays young. The greatest thing in 
+        life is to keep your mind young.
+      </p>
+    </div>
+    <div id="bg3">
+      <h2>행복을 위해서라면</h2>
+      <h3>시간을 벌자, 돈도 벌고</h3>
+      <p>
+        Winners embrace hard work. They love the discipline of it, 
+        the trade-off they're making to win. Losers, on the other hand, 
+        see it as punishment. And that’s the difference.
+      </p>
+    </div>
+  </body>
+</html>
