@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>그러데이션 효과</title>
+  <style>
+	div {
+		width:300px;
+		height:300px;
+	}
+  .grad {
+    margin: 10px;
+    float: left;
+  }
+	#grad1 {
+    background: blue;
+    background: linear-gradient(to right bottom, blue, white);
+    border-radius: 10px;
+  }
+  #grad2 {
+    background: #f00;
+    background: linear-gradient(45deg, #f00, #fff);
+    border-radius: 10px;
+  }
+  #grad3 {
+    background: #06f;
+    background: linear-gradient(to bottom, #06f, white 30%, #06f);
+    border-radius: 10px;
+  }
+  #grad4 {
+    background: red;
+    background: radial-gradient(white, yellow, red);
+    width:500px;
+		height:300px;
+    border-radius: 10px;
+  }
+  #grad5 {
+    background: red;
+    background: radial-gradient(circle, white, yellow, red);
+    border-radius: 10px;
+  }
+  #grad6 {
+    background: blue;
+    background: radial-gradient(circle at 20% 20%, white, blue);
+    border-radius: 50%;
+    box-shadow: 10px 5px 10px black;
+  }
+  #grad7 {
+    background: orange;
+    background: radial-gradient(yellow, white, orange);
+    width:500px;
+		height:300px;
+    border-radius: 10px;
+  }
+  #grad8 {
+    background: orange;
+    background: radial-gradient(yellow, white 10%, orange 60%);
+    width:500px;
+		height:300px;
+    border-radius: 10px;
+  }
+  #grad9 {
+    background: red;
+    background: repeating-linear-gradient(yellow, red 20px)
+  }
+  #grad10 {
+    background: white;
+    background: repeating-radial-gradient(circle, black, white 10%);
+  }
+  #grad11 {
+    background: blue;
+    background: repeating-linear-gradient(green, yellow 20px, red 20px, red 40px);
+  }
+  #grad12 {
+    background: white;
+    background: repeating-radial-gradient(circle, grey, grey 10%, white 10%, white 20%);
+  }
+  </style>
+</head>
+<body>
+  <a href="index.html">홈으로</a><br />
+  <div class="grad" id="grad1"></div> 
+  <div class="grad" id="grad2"></div> 
+  <div class="grad" id="grad3"></div> 
+  <div class="grad" id="grad4"></div> 
+  <div class="grad" id="grad5"></div> 
+  <div class="grad" id="grad6"></div> 
+  <div class="grad" id="grad7"></div> 
+  <div class="grad" id="grad8"></div> 
+  <div class="grad" id="grad9"></div> 
+  <div class="grad" id="grad10"></div>
+  <div class="grad" id="grad11"></div>
+  <div class="grad" id="grad12"></div>
+</body>
+</html>
