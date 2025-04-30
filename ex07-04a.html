@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: lightgrey;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        }
+        .container{
+          background-color: aqua;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 20px 30px 40px black;
+          width: 500px;
+        }
+        h2 {
+          margin-bottom: 20px;
+          text-align: center;
+        }
+        input {
+          width: 93%;
+          padding: 10px;
+          margin: 10px 0;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+        button {
+          width: 100%;
+          padding: 10px;
+          border: none;
+          border-radius: 5px;
+          background-color: blue;
+          color: white;
+          font-size: 1rem;
+          cursor: pointer;
+          margin: 10px 0;
+        }
+        button:hover {
+          background-color: navy;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>데이터 수집</h2>
+      <form 
+        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfgAtYA62gybtU-R-_mhj8uzC3pCl9fkBqbEzehT4iYyRpJCw/formResponse"
+        method="get"
+      >
+       <label for="question1">당신이 원하는 프로그램 언어는? (C언어, Python, JAVA 중에 고르시오.)</label><br />
+       <input 
+         type="text"
+         id="question1"
+         placeholder="보기 중에 입력하세요"
+         name="entry.1306958712"
+         required 
+       />
+       <label for="question2">당신이 좋아하는 메뉴은? (한식, 중식, 양식 중에 고르시오)</label>
+       <input 
+         type="text"
+         id="question2"
+         placeholder="보기 중에 입력하세요"
+         name="entry.359154571"
+         required 
+       />
+       <label for="question3">가고 싶은 여행지는?</label>
+       <input 
+         type="text"
+         id="question3"
+         placeholder="보기 중에 입력하세요"
+         name="entry.623698990"
+         required 
+       />
+       <label for="question4">나이는?</label>
+       <input 
+         type="text"
+         id="question4"
+         placeholder="보기 중에 입력하세요"
+         name="entry.854354828"
+         required
+       />
+       <button>제출하기</button>
+      </form>
+    </div>
+  </body>
+</html>

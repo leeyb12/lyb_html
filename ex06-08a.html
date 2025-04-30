@@ -23,7 +23,7 @@
     </style>
   </head>
   <body>
-  <a href="index.html">홈으로</a><br />
+    <a href="index.html">홈으로</a><br />
     <ul>
       <li>로그인</li>
       <li>회원가입</li>
@@ -32,10 +32,15 @@
       <li>고객센터</li>
     </ul>
     <script>
-      const pt = document.querySelector("li");
-      pt.addEventListener("click",()=>{
-        alert("누르지마!!");
-      });
+      const pt = document.querySelectorAll("li");
+
+      // for v in pt:
+
+      pt.forEach((v) => {
+        v.addEventListener("click",() => {
+          alert(v.textContent + "누르지마!!");
+        });
+     });
     </script>
   </body>
 </html>
