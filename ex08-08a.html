@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      div {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        background-color: cornflowerblue;
+        border-radius: 50%;
+        left: 100px;
+        animation: ball 2s ease-in infinite alternate, background 2s infinite alternate;
+        }
+
+      @keyframes ball {
+        0% {
+          top: 0px;
+        }
+
+        50% {
+          width: 100px;
+        }
+
+        75% {
+          width: 100px;
+        }
+
+        to {
+          top: 600px;
+          width: 115px;
+          height: 90px;
+        }
+      }
+      @keyframes background {
+        0% {background-color: red;}
+        50% {background-color: green;}
+        75% {background-color: blue;}
+        to {background-color: purple;}
+      }
+    </style>
+  </head>
+  <body>
+    <a href="index.html">홈으로</a><br />
+    <div></div>
+  </body>
+</html>
