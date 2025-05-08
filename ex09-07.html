@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body {
+        background-color: aquamarine;
+        padding: 8rem;
+        display: flex;
+        justify-content: center;
+      }
+      .card {
+        background-color: white;
+        max-width: 360px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 30px;
+        overflow: hidden;
+        /* box-shadow: 0;
+        font: 1.5rem black; */
+      }
+      .banner {
+        background-image: url("https://t3.ftcdn.net/jpg/05/83/22/56/360_F_583225602_dnFvr2YNlzg9dHaXjwUwo50jUeZy1Oxi.jpg");
+        display: flex;
+        background-size: cover;
+        height: 160px;
+        justify-content: center;
+      }
+      .profile {
+        width: 100px;
+        height: 100px;
+        /* background-image: url("https://d2v80xjmx68n4w.cloudfront.net/gigs/rate/Ub0iD1666875311.png"); */
+        background-image: url("https://i.namu.wiki/i/vz0UO-jGGNxusE3vWGMEVLZNkbTJd6YODH8NOyENUATFcpOSbbhikoRmCtrrIBeTjWlAe48SuzC7cGoRC1jWVQ.webp");
+        background-size: 100px;
+        border-radius: 50%;
+        box-shadow: 5px 10px 30px rgba(0,0,0,0.7);
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+      }
+      .profile:hover {
+        transform: translateY(100%) scale(1.3);
+      }
+      .name {
+        text-align: center;
+        padding-top: 60px;
+      }
+      .follow-btn {
+        padding: 0 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .follow-btn button {
+        font-size: medium;
+        font-weight: bold;
+        background-color: skyblue;
+        border: none;
+        padding: 1rem;
+        outline: none;
+        border-radius: 50px;
+      }
+      .desc {
+        padding: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- div.card>div.banner>div.profile^h2.name{Yunbeom}+div.follow-btn+div.desc{내용들...} -->
+    <div class="card">
+      <div class="banner">
+        <div class="profile"></div>
+      </div>
+      <h2 class="name">Yunbeom</h2>
+      <div class="follow-btn"><button>Follow</button></div>
+      <div class="desc">
+      고생하셨습니다. 어디까지나 최선을 다할 수 있도록 노력해 주십시오. 
+      때때로 불행한 일이 좋은 사람들에게 생길 수 있다. 
+      </div>
+    </div>
+  </body>
+</html>
