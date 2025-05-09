@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body {
+        background-color: beige;
+      }
+      .post-list {
+        width: 800px;
+        margin: auto;
+        position: relative;
+      }
+      .post {
+        background-color:rgb(8, 255, 255);
+        padding: 1.5rem;
+        margin-bottom: -50px;
+        border-radius: 12px;
+        border: 1px solid #000;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+        position: relative;
+        transition: 0.3s ease-in;
+      }
+      .post:hover {
+        transform: translateY(-20px);
+        z-index: 100;
+      }
+      .post h3 {
+        margin: 0;
+        color: #333;
+      }
+      .post p {
+        color: #555;
+        font-size: 0.9rem;
+      }
+      .post small {
+        display: block;
+        margin-top: 0.5rem;
+        color: #aaa;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- div.post-list>(div.post>h3{제목$}+p{내용$}+{2025년 05월 $일})*7 -->
+    <div class="post-list">
+      <div class="post">
+        <h3>Python에 대하여</h3>
+        <p>
+          내용1 
+          고급 프로그래밍 언어로, 쉽고 읽기 쉬운 문법을 제공하여 초보자부터 전문가까지 많이 사용합니다. 
+          웹 개발, 데이터 분석, 인공지능, 자동화 등에 널리 활용됩니다.대표적인 프레임워크: Django, Flask
+        </p>
+        2025년 05월 1일
+      </div>
+      <div class="post">
+        <h3>Java에 대하여</h3>
+        <p>
+          내용2 
+          객체 지향 언어로, 기업 시스템과 안드로이드 앱 개발에서 많이 사용됩니다.
+          한 번 작성하면 어디서든 실행할 수 있는 플랫폼 독립성이 강점입니다.
+          대표적인 프레임워크: Spring, Hibernate
+        </p>
+        2025년 05월 2일
+      </div>
+      <div class="post">
+        <h3>HTML에 대하여</h3>
+        <p>내용3 
+          웹페이지의 구조를 정의하는 마크업 언어입니다.
+          h1,p,img 등의 태그를 사용해 텍스트, 이미지, 링크 등을 배치합니다.
+        </p>
+        2025년 05월 3일
+      </div>
+      <div class="post">
+        <h3>CSS에 대하여</h3>
+        <p>내용4 
+          웹페이지의 스타일을 담당하는 언어로, HTML 요소의 색상, 크기, 정렬 등을 조정합니다.
+          반응형 디자인을 구현하는 데 필수적입니다.
+          인기 있는 스타일 프레임워크: Bootstrap, Tailwind CSS
+        </p>
+        2025년 05월 4일
+      </div>
+      <div class="post">
+        <h3>Hadoop에 대하여</h3>
+        <p>내용5 
+          빅데이터 저장 및 처리에 사용되는 분산 처리 프레임워크입니다.
+          여러 대의 컴퓨터에서 데이터를 나누어 처리하는 방식으로 대량의 데이터를 효율적으로 다룰 수 있습니다.
+          주요 구성 요소: HDFS(파일 저장), MapReduce(데이터 처리)
+        </p>
+        2025년 05월 5일
+        </div>
+      <div class="post">
+        <h3>Kafka에 대하여</h3>
+        <p>내용6 
+          실시간 데이터 스트리밍 플랫폼으로, 대량의 데이터를 빠르게 전달하고 처리할 수 있습니다.
+          로그 관리, 모니터링, 이벤트 처리 등에 많이 사용됩니다.
+          분산 시스템 특성을 갖춰 확장성이 뛰어납니다.
+        </p>
+        2025년 05월 6일
+      </div>
+      <div class="post">
+        <h3>Oracle에 대하여</h3>
+        <p>내용7 
+          관계형 데이터베이스 관리 시스템(RDBMS)으로, 기업에서 데이터를 저장하고 관리하는 데 널리 사용됩니다.
+          강력한 보안, 고성능 처리, 확장성을 갖춘 데이터베이스 솔루션입니다.
+          ERP 시스템과 연계하여 재무, 회계, 공급망 관리 등 다양한 비즈니스 프로세스를 지원합니다.
+        </p>
+        2025년 05월 7일
+      </div>
+      <div class="post">
+        <h3>Javascript에 대하여</h3>
+        <p>내용8 
+          웹 개발에서 사용되는 프로그래밍 언어로, 웹페이지에 동적인 기능을 추가할 수 있습니다.
+          HTML과 CSS와 함께 웹의 기본 기술 중 하나이며, 클라이언트 측에서 실행됩니다.
+          버튼 클릭 이벤트, 애니메이션, 데이터 처리 등 다양한 기능을 구현할 수 있습니다.
+        </p>
+        2025년 05월 8일
+      </div>
+    </div>
+  </body>
+</html>
