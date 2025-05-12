@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      table {
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+        margin: auto;
+      }
+      th,
+      tr, 
+      td {
+        /* border: 1px solid navy; */
+        padding: 5px;
+        background-color: skyblue;
+      }
+      tr:nth-of-type(even) td {
+        background-color: aquamarine;
+      }
+    </style>
+    <script>
+      const inp = prompt("원하는 값을 입력하세요.");
+      let list= ``;
+      list += `<table>`;
+      list += `  <tr>`;
+      list += `    <th colspan="2">구구단${inp}단</th>`;
+      list += `  </tr>`;
+      list += `  <tr>`;
+      list += `    <td>${inp}X1</td>`;
+      list += `    <td>${inp}</td>`;
+      list += `  </tr>`;
+      list += `  <tr>`;
+      list += `    <td>${inp}X2</td>`;
+      list += `    <td>${inp * 2}</td>`;
+      list += `  </tr>`;
+      list += `  <tr>`;
+      list += `    <td>${inp}X3</td>`;
+      list += `    <td>${inp * 3}</td>`;
+      list += `  </tr>`;
+      list += `  <tr>`;
+      list += `    <td>${inp}X4</td>`;
+      list += `    <td>${inp * 4}</td>`;
+      list += `  </tr>`;
+      list += `  <tr>`;
+      list += `   <td>${inp}X5</td>`;
+      list += `   <td>${inp * 5}</td>`;
+      list += `  </tr>`;
+      list += `  <tr>`;
+      list += `   <td>${inp}X6</td>`;
+      list += `   <td>${inp * 6}</td>`;
+      list += `  </tr>`;
+      list += `  <tr>`;
+      list += `   <td>${inp}X7</td>`;
+      list += `   <td>${inp * 7}</td>`;
+      list += `  </tr>`;
+      list += `  <tr>`;
+      list += `   <td>${inp}X8</td>`;
+      list += `   <td>${inp * 8}</td>`;
+      list += `  </tr>`;
+      list += `  <tr>`;
+      list += `   <td>${inp}X9</td>`;
+      list += `   <td>${inp * 9}</td>`;
+      list += `  </tr>`;
+      list += `</table>`;
+      document.write(list);
+    </script>
+  </head>
+  <body></body>
+</html>
