@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+    <script></script>
+    <style>
+      h2 {
+        /* transition: 1s ease-in-out; */
+        animation: mine 0.5s linear forwards;
+        text-align: center;
+        position: relative;
+        top: 200px;
+      }
+
+      @keyframes mine {
+        0% {
+          transform: translate(0px, -200px);
+          opacity: 0;
+        }
+
+        90% {
+          opacity: 0.5;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+    <script>
+      setInterval(() => {
+        location.reload(); // 👉 현재 페이지를 새로고침
+      }, 5000); // 10000ms = 10초
+    </script>
+  </head>
+
+  <body>
+    <h2>안녕하세요.</h2>
+  </body>
+</html>
