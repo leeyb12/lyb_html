@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding-top: 100px;
+        background-color: #f8f9fa;
+      }
+      h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+      }
+      .result {
+        font-size: 64px;
+        font-weight: bold;
+        margin: 40px 0;
+      }
+      button {
+        font-size: 24px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>50% 확률로</h1>
+    <div class="result" id="result">?</div>
+    <button onclick="decideFate()">운명을 확인하세요</button>
+    <script>
+      function decideFate() {
+        const result = Math.random() < 0.5 ? "당신은 타노스에 의해서 사망하셨습니다." : "당신은 타노스에 의해서 생존하셨습니다.";
+        const resultDiv = document.getElementById("result");
+        resultDiv.textContent = result;
+        resultDiv.style.color = result === "당신은 타노스에 의해서 사망하셨습니다." ? "red" : "green";
+        decideFate();
+      }
+    </script>
+  </body>
+</html>

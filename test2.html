@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>자리배치도</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .seating-chart {
+      display: grid;
+      grid-template-columns: repeat(4, 100px);
+      grid-gap: 10px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .seat {
+      background-color: #e0f7fa;
+      border: 2px solid #00838f;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.3s;
+    }
+
+    .seat:hover {
+      background-color: #b2ebf2;
+    }
+
+    .seat input {
+      width: 80%;
+      font-size: 14px;
+      padding: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>자리배치도</h1>
+  <div class="seating-chart" id="seatingChart"></div>
+
+  <script>
+    const rows = 5;
+    const cols = 4;
+
+    const seatingChart = document.getElementById("seatingChart");
+
+    for (let i = 0; i < rows * cols; i++) {
+      const seat = document.createElement("div");
+      seat.className = "seat";
+      seat.textContent = `좌석 ${i + 1}`;
+      seat.addEventListener("click", function () {
+        const currentName = seat.textContent;
+        const input = document.createElement("input");
+        input.type = "text";
+        input.value = currentName.includes("좌석") ? "" : currentName;
+        seat.textContent = "";
+        seat.appendChild(input);
+        input.focus();
+
+        input.addEventListener("blur", () => {
+          seat.textContent = input.value.trim() || `좌석 ${i + 1}`;
+        });
+
+        input.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") {
+            input.blur();
+          }
+        });
+      });
+
+      seatingChart.appendChild(seat);
+    }
+  </script>
+</body>
+</html>

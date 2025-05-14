@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  <style>
+    body
+    ,table{
+      border-collapse: collapse;
+    }
+    tr,td{
+      border: 1px solid black;
+      width: 30px;
+      height: 30px;
+    }
+    tr {
+      text-align: center;
+      font-size: 12px;
+    }
+    
+    #list{
+      animation: mine 0.5s 
+    }
+    </style>
+    </head>
+    <body>
+      <table>
+       <tbody>
+        <tr>
+          <td colspan="6">16미만</td>
+          <td colspan="4">16이상~22미만</td>
+          <td colspan="4">22이상~28미만</td>
+          <td colspan="3">28이상~32미만</td>
+          <td colspan="6">32이상</td>
+        </tr>
+        <tr>
+          <td style="background-color: #bca9f5"></td>
+          <td style="background-color: #bca9f5"></td>
+          <td style="background-color: #bca9f5"></td>
+          <td style="background-color: #bca9f5"></td>
+          <td style="background-color: #bca9f5"></td>
+          <td style="background-color: #bca9f5"></td>
+          <td style="background-color: #8181f7"></td>
+          <td style="background-color: #8181f7"></td>
+          <td style="background-color: #8181f7"></td>
+          <td style="background-color: #8181f7"></td>
+          <td style="background-color: yellow"></td>
+          <td style="background-color: yellow"></td>
+          <td style="background-color: yellow"></td>
+          <td style="background-color: yellow"></td>
+          <td style="background-color: #f5d0a9"></td>
+          <td style="background-color: #f5d0a9"></td>
+          <td style="background-color: #f5d0a9"></td>
+          <td style="background-color: red"></td>
+          <td style="background-color: red"></td>
+          <td style="background-color: red"></td>
+          <td style="background-color: red"></td>
+          <td style="background-color: red"></td>
+          <td style="background-color: red"></td>
+        </tr>
+        <tr>
+          <td colspan="6">정상온도에서 이하로 벗어났습니다.</td>
+          <td colspan="4">시원하네요.</td>
+          <td colspan="4">보통이네요.</td>
+          <td colspan="3">갑갑하네요.</td>
+          <td colspan="6">정상온도를 넘겼습니다.</td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      const temp = prompt("온도를 입력해주세요");
+        
+        if (temp >= 32) {
+            document.write(`<h3>지금 온도는 ${temp}이며, 상태는 정상온도를 넘겼습니다</h3>`);    
+        } else if (temp >= 28) {
+            const list = `지금 온도는 ${temp}이며, 상태는 갑갑하네요`;
+            document.body.innerHTML = list;
+        } else if (temp >= 22) {
+            const list = `지금 온도는 ${temp}이며, 상태는 보통이에요`;
+            document.body.innerHTML = list;
+        } else if (temp >= 16) {
+            const list = `지금 온도는 ${temp}이며, 상태는 시원하네요`;
+            document.body.innerHTML = list;
+        } else {
+            const list = `지금 온도는 ${temp}이며, 상태는 정상온도에서 이하로 벗어났습니다 `;
+            document.body.innerHTML = list;
+        };
+    </script>
+  </body>
+</html>
