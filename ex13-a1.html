@@ -8,6 +8,7 @@
     body
     ,table{
       border-collapse: collapse;
+      font-family: Arial, sans-serif;
     }
     tr,td{
       border: 1px solid black;
@@ -19,8 +20,30 @@
       font-size: 12px;
     }
     
-    #list{
-      animation: mine 0.5s 
+    h3 {
+      animation: blinkcolor 0.5s infinite;
+    }
+
+    @keyframes blinkcolor {
+      0% {
+        color: purple;
+      }
+
+      20% {
+        color: blue;
+      }
+
+      40% {
+        color: yellow;
+      }
+
+      60% {
+        color: orange;
+      }
+
+      100% {
+        color: red;
+      }
     }
     </style>
     </head>
@@ -68,23 +91,22 @@
         </tr>
       </tbody>
     </table>
+
+
+
     <script>
       const temp = prompt("온도를 입력해주세요");
         
         if (temp >= 32) {
             document.write(`<h3>지금 온도는 ${temp}이며, 상태는 정상온도를 넘겼습니다</h3>`);    
         } else if (temp >= 28) {
-            const list = `지금 온도는 ${temp}이며, 상태는 갑갑하네요`;
-            document.body.innerHTML = list;
+            document.write(`<h3>지금 온도는 ${temp}이며, 상태는 갑갑하네요</h3>`); 
         } else if (temp >= 22) {
-            const list = `지금 온도는 ${temp}이며, 상태는 보통이에요`;
-            document.body.innerHTML = list;
+            document.write(`<h3>지금 온도는 ${temp}이며, 상태는 보통이네요</h3>`); 
         } else if (temp >= 16) {
-            const list = `지금 온도는 ${temp}이며, 상태는 시원하네요`;
-            document.body.innerHTML = list;
+            document.write(`<h3>지금 온도는 ${temp}이며, 상태는 시원하네요</h3>`); 
         } else {
-            const list = `지금 온도는 ${temp}이며, 상태는 정상온도에서 이하로 벗어났습니다 `;
-            document.body.innerHTML = list;
+            document.write(`<h3>지금 온도는 ${temp}이며, 상태는 정상온도에서 이하로 벗어났습니다다</h3>`); 
         };
     </script>
   </body>
