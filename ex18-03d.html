@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .btn {
+        text-align: center;
+        margin: 20px;
+      }
+      .clock {
+        position: relative;
+        height: 500px;
+        width: 500px;
+        border-radius: 50%;
+        background-color: rgb(20, 22, 20);
+      }
+      #min{
+        position: absolute;
+        bottom: 50%;
+        left: 50%;;
+        background-color: greenyellow;
+        transform-origin: bottom center;
+        transform: rotate(0deg);
+        transition: transform 0.05s linear;
+      } 
+      #sec {
+        width: 2px;
+        height: 200px;
+        background-color: red;
+      }
+    </style>
+    </head>
+  <body>
+    <div class="clock"></div>
+      <div id="min"></div>
+      <div id="sec"></div>
+      <button onclick="startTimer()">시작버튼</button>
+      <button onclick="stopTimer()">종료버튼</button>
+      <button onclick="resetTimer()">초기화</button>
+    </div>
+    <script>
+      let s_sec = (id = end_sec = msec = min = sec = s = m =0);
+      const ms = document.querySelector("#ms");
+    </script>
+  </body>    
+</html>
