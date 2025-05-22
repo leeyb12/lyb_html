@@ -5,44 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-      .btn {
+      h1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 3;
+        position: relative;
+        top: 20px;
+      }
+      #digital {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         text-align: center;
-        margin: 20px;
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        top: 20px;
       }
       .clock {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
         position: relative;
         height: 500px;
         width: 500px;
         border-radius: 50%;
-        background-color: rgb(20, 22, 20);
+        border: 1px solid #000000;
+        background-color: rgb(149, 230, 149);
       }
-      #min{
-        position: absolute;
-        bottom: 50%;
-        left: 50%;;
-        background-color: greenyellow;
-        transform-origin: bottom center;
-        transform: rotate(0deg);
-        transition: transform 0.05s linear;
-      } 
       #sec {
+        position: absolute;
+        top: 50px;
+        left: 250px;
         width: 2px;
         height: 200px;
+        border: 1px solid red;
+        border-radius: 3px;
         background-color: red;
+        transform-origin: bottom; 
+      }
+      .buttons {
+        display: block;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        margin: 20px;
+        text-align: center;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
       }
     </style>
     </head>
   <body>
-    <div class="clock"></div>
+    <h1>초시계</h1>
+    <div id = "digital">00:00:00.00</div>
+    <div class="clock">
+      <div id="hour"></div>
       <div id="min"></div>
       <div id="sec"></div>
+    </div>
+    <div class="buttons">
       <button onclick="startTimer()">시작버튼</button>
       <button onclick="stopTimer()">종료버튼</button>
       <button onclick="resetTimer()">초기화</button>
     </div>
     <script>
-      let s_sec = (id = end_sec = msec = min = sec = s = m =0);
-      const ms = document.querySelector("#ms");
+     let startTime = 0;
+     let elapsedTime = 0;
+     let timerId;
+
+     function startTimer() {
+       startTime = Date.now() - elapsedTime;
+       timerId = setInterval(() => {
+         elapsedTime = Date.now() - startTime;
+         const time = new Date(elapsedTime);
+         const hours = String(time.getUTCHours()).padStart(2, '0');
+         const minutes = String(time.getUTCMinutes()).padStart(2, '0');
+         const seconds = String(time.getUTCSeconds()).padStart(2, '0');
+         const milliseconds = String(time.getUTCMilliseconds()).padStart(2, '0');
+         document.querySelector("#digital").textContent = `${hours}:${minutes}:${seconds}.${milliseconds}`;
+         document.querySelector("#sec").style.transform = `rotate(${elapsedTime / 1000 * 360}deg)`;
+       }, 1);
+     }
+     function stopTimer() {
+        clearInterval(timerId);
+        timerId = null;
+     }
+     function resetTimer() {
+       clearInterval(timerId);
+       elapsedTime = 0;
+       document.querySelector("#digital").textContent = `00:00:00.00`;
+       document.querySelector("#sec").style.transform = `rotate(0deg)`;
+       document.querySelector("#min").style.transform = `rotate(0deg)`;
+     }
     </script>
   </body>    
 </html>
