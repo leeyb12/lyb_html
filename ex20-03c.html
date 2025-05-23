@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dongle&family=Gaegu&family=Gowun+Dodum&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Gowun Dodum", sans-serif;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      li {
+        background-color: aqua;
+        color: orangered;
+        font-weight: bold;
+        margin: 5px 0;
+        padding: 10px;
+        border-radius: 10px;
+        width: 600px;
+        transition: 0.6s ease;
+        box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+      }
+      li:nth-of-type(even) {
+        background-color: lightgreen;
+        color: blue;
+      }
+      li:hover {
+        background-color: skyblue;
+        color: yellow;
+        width: 700px;
+      }
+      input {
+        width: 600px;
+        height: 20px;
+        border-radius: 10px;
+        margin: 10px;
+        outline: none;
+        border: none;
+        box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+        padding: 10px;
+        background-color: wheat;
+        font-size: 20px;
+      }
+      button {
+        background-color: cornflowerblue;
+        color: white;
+        border: none;
+        padding: 8px;
+        border-radius: 10px;
+        box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+      }
+      
+      h1 {
+        animation: blinkcolor 0.3s infinite;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+
+      @keyframes blinkcolor {
+      0% {
+        color: purple;
+      }
+
+      20% {
+        color: blue;
+      }
+
+      40% {
+        color: orange;
+      }
+
+      80% {
+        color: green
+      }
+
+      100% {
+        color: red;
+      }
+    }
+    </style>
+    <script> 
+       document.addEventListener("DOMContentLoaded", () => {
+        const h1 = document.createElement("h1");
+        const inp = document.createElement("input");
+        const btn = document.createElement("button");
+        const hr = document.createElement("hr");
+        const ul = document.createElement("ul");
+        document.body.append(h1, inp, btn, hr, ul);
+        // document.body.appendChild(h1);
+        // document.body.appendChild(inp);
+        // document.body.appendChild(btn);
+        // document.body.appendChild(hr);
+        // document.body.appendChild(ul);
+
+        h1.textContent = "ToDo 리스트 생성";
+        btn.textContent = "생성";
+
+        btn.addEventListener("click", () => {
+          const li = document.createElement("li");
+          ul.appendChild(li);
+          li.textContent = inp.value;
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <a href="index.html">홈으로</a><br />
+  </body>
+</html>
