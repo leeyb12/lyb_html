@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://127.0.0.1:5500/ex21-01a.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      img {
+        width: 100px;
+        margin: 0;
+        border-radius: 50%;
+        font-size: 3rem;
+        position: absolute;
+        padding: 20px 30px 30px;
+        /* transform: translate(400px, 400px); */
+        user-select: none;
+        left: 100px;
+        top: 100px;
+      }
+    </style>
+    <script>
+      let status = false;
+      document.addEventListener("DOMContentLoaded", () => {
+        const pac = document.createElement("img");
+
+        setInterval(() => {
+          if (status) {
+            pac.src = "./img/pac1.png";
+          } else {
+            pac.src = "./img/pac2.png";
+          }
+          status = !status;
+        }, 200)
+
+        document.body.appendChild(pac);
+
+        const spawItem = () => {
+          const item = document.creatElement("img");
+          item.src = "./img/redmashroom.png";
+
+          const x = Math.floor(Math.random() * 10);
+          const y = Math.floor(Math.random() * 10);
+
+          item.style.left = `${x * 40}px`;
+          item.style.top = `${y * 40}px`;
+
+          item.dataset.x = itemX;
+          item.dataset.y = itemY;
+          
+          item.style.position = "absolute";
+          item.style.width = "40px";  
+
+          document.body.appendChild(item);
+        };
+
+        spawItem();
+
+        let x = (y = 10);
+        const step = 40;
+
+        const move = (event) => {
+          pac.style.left = `${x * step}px`;
+          pac.style.top = `${y * step}px`;
+        };
+        move(); // 최초로딩
+        window.addEventListener("keydown",(event) => {
+            if(event.key == "ArrowLeft") {
+              x -= 1;
+              pac.style.transform = "scaleX(-1)";
+            }
+            if(event.key == "ArrowRight") {
+              x += 1;
+              pac.style.transform = "scaleX(1)";
+            }
+            if(event.key == "ArrowUp") {
+              y -= 1;
+              pac.style.transform = "rotate(270deg)";
+            }
+            if(event.key == "ArrowDown") {
+              y += 1;
+              pac.style.transform = "rotate(90deg)";
+            }
+            console.log(event.key);
+            move();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <a href="http://127.0.0.1:5500/index.html">홈으로</a><br>
+  <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+<img src="./Document_files/pac1.png"></body></html>
