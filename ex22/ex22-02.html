@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <style>
+    .btn {
+      text-align: center;
+      margin: 20px;
+    }
+    .clock {
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background-color: rgb(34, 231, 34);
+      margin: 0 auto 30px;
+      box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+      position: relative;
+    }
+    #ms {
+      width: 5px;
+      height: 180px;
+      background-color: yellow;
+      border-radius: 20px;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translate(-50%) rotate(90deg);
+      transform-origin: 50% 100%;
+      z-index: 100;
+    }
+    #ss {
+      width: 10px;
+      height: 150px;
+      background-color: rgb(255, 50, 50);
+      border-radius: 20px;
+      position: absolute;
+      top: 40px;
+      left: 50%;
+      transform: translate(-50%) rotate(190deg);
+      transform-origin: 50% 100%;
+    }
+    button {
+      margin: 10px;
+    }
+    #rec-disp {
+      text-align: center;
+    }
+  </style>
+  <body>
+    <!-- div.btn>div#time_disp+button*3^div.clock>div#ms+div#ss -->
+   <div class="btn">
+      <div id="time_disp">0 min 0 sec 000 msec</div>
+      <button onclick="st()">시작버튼</button><button>기록버튼</button
+      ><br /><button onclick="end()">정지버튼</button
+      ><button onclick=" reset()">리셋버튼</button>
+    </div>
+    <div class="clock">
+      <div id="ms"></div>
+      <div id="ss"></div>
+    </div>
+    <div id="rec-disp">[기록]</div>
+    <script>
+      let s_sec = (id = end_sec = msec = min = sec = s = m = 0);
+      const ms = document.getElementById("ms");
+      const ss = document.getElementById("ss");
+      const recDisp = document.getElementsById("rec-disp");
+      function st() {
+        id = setTimeout(() => {
+          end_sec += 1;
+          msec = end_sec % 100;
+          sec_ = parseInt(end_sec / 100);
+          sec = sec_ % 60;
+          min = parseInt(sec_ / 100);
+          document.getElementById(
+            "time_disp"
+          ).innerHTML = `${min} min ${sec} sec ${msec}0 msec`;
+          st();
+        }, 10);
+      }
+      function rec() {
+        recDisp.innerHTML = `${min} min ${sec} sec ${msec}0 msec`;
+      }
+      function end() {
+        clearTimeout(id);
+        console.log("타이머 종료");
+      }
+      function reset() {
+        clearTimeout(id);
+        s_sec = end_sec = msec = sec = min = 0;
+        document.getElementById("time_disp").innerHTML = `0 min 0 sec 000 msec`;
+      }
+    </script>
+  </body>
+</html>
